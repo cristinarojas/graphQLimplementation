@@ -1,0 +1,25 @@
+{
+  "name": "graphQLimplementation",
+  "version": "1.0.0",
+  "description": "This is an example of how graphQL works",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cristinarojas/graphQLimplementation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cristinarojas/graphQLimplementation/issues"
+  },
+  "homepage": "https://github.com/cristinarojas/graphQLimplementation#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-graphql": "^0.9.0",
+    "graphql": "^15.0.0"
+  }
+}
