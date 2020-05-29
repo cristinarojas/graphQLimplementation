@@ -13,6 +13,11 @@ const { courses } =  require('./data.json');
 // we define all the types of queries
 // that the users can do
 const schema = buildSchema(`
+
+  type Mutation {
+    updateCourseTopic(id: Int!, topic: String!): Course
+  }
+
   type Query {
     message: String
     course(id: Int!): Course
@@ -59,10 +64,31 @@ let getCourses = (args) => {
   }
 }
 
+// function that update a course
+let updateCourseTopic = ({ id, topic}) => {
+  // go through the array
+  courses.map((course) => {
+    // if the id that Im passing match
+    // with some course
+    if (course.id === id) {
+
+      // then replace the topic with the new topic
+      course.topic = topic;
+
+      return course;
+    }
+  });
+
+  // Returning the new data
+  return courses.filter((course) => course.id === id)[0];
+}
+
+
 const root = {
   message: () => "Hello world!",
   course: getCourse,
-  courses: getCourses
+  courses: getCourses,
+  updateCourseTopic: updateCourseTopic
 }
 
 // To build a path to interact with graphql
